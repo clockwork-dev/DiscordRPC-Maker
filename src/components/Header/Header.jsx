@@ -10,7 +10,7 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openUrlGit = async () => {
-    const url = "https://github.com/yourusername/yourproject";
+    const url = "https://github.com/clockwork-dev/DiscordRPC-Maker";
     await open(url);
   };
 
