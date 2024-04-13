@@ -12,6 +12,7 @@ const [variable1, setVariable1] = useState('');
 const [variable2, setVariable2] = useState('');
 const [variable3, setVariable3] = useState('');
 const [variable4, setVariable4] = useState('');
+const [variable5, setVariable5] = useState('');
   
 const handleVariable1Change = (event) => {
   setVariable1(event.target.value);
@@ -28,6 +29,11 @@ const handleVariable3Change = (event) => {
 const handleVariable4Change = (event) => {
   setVariable4(event.target.value);
 };
+const handleVariable5Change = (event) => {
+    setVariable5(event.target.value);
+  };
+
+
   
 const sendDataToBackend = async () => {
     setIsToggled(!isToggled);
@@ -39,6 +45,7 @@ const sendDataToBackend = async () => {
         variable2,
         variable3,
         variable4,
+        variable5,
     }});
   
         console.log('Response:', response);
@@ -68,38 +75,58 @@ const labelStyle = css`
 `;
 
 const pStyle = css`
-margin-bottom: 5px;
-padding: 0;
+    margin-bottom: 5px;
+    padding: 0;
 `;
-const buttonToggle = () => {
-    
-}
 
 return (
     <div css={css`
         display: flex;
         justify-content: space-between;
         max-width: 500px;
+        max-height: 500px;
         flex-direction: column;
         margin: auto;
         padding: 2px:
     `}>
         <label css={labelStyle}><p css={pStyle}>App id | <a href="https://discord.com/developers/applications" target="_blank">Discord Developer Portal</a></p><MyInput 
             onChange={handleVariable1Change}
-            placeholder="Variable 1"
+            placeholder="default: 425407036495495169"
             /> </label>
         <label css={labelStyle}><p css={pStyle}>State massage</p><MyInput 
             onChange={handleVariable2Change}
-            placeholder="Variable 2"
+            placeholder=""
             /> </label>
         <label css={labelStyle}><p css={pStyle}>Details</p><MyInput 
             onChange={handleVariable3Change}
-            placeholder="Variable 3"
+            placeholder=""
         /> </label>
-        <label css={labelStyle}><p css={pStyle}>State massage</p><MyInput 
-            onChange={handleVariable4Change}
-            placeholder="Variable 4"
-            /> </label>
+        <label css={css`
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                font-size: 20px;
+                text-align: center;
+                padding-bottom: 2px;
+            `}>
+            <p css={pStyle}>Timestamps | Unix format</p>
+            <MyInput 
+                onChange={handleVariable4Change}
+                placeholder="Start"
+            />
+            <div css={css`margin-top: 5px;
+                border-bottom-color: #ccc;
+                border-bottom: 2px solid #646cff;;
+                border-radius: 5px;
+                padding-bottom: 2px;
+            `}>
+                <MyInput 
+                    onChange={handleVariable5Change}
+                    placeholder="End"
+                />
+            </div>
+        </label>
 
         <MyButton  onClick={sendDataToBackend}>{
             isToggled ? 'Stop' : 'Start' 

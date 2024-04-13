@@ -17,6 +17,7 @@ function MyInput(props) {
         borderRadius: '5px',
         width: '350px',
         boxSizing: 'border-box',
+        backgroundColor: '#242424',
       }}
     />
   );
