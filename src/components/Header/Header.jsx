@@ -16,7 +16,7 @@ function Header() {
 
   return (
     <div css={css`
-      width: 100%;
+      width: auto;
       background-color: #242424;
       color: #fff;
       padding: 10px;
@@ -34,7 +34,18 @@ function Header() {
         `}>Discord RPC Maker</h1>
         <IconContext.Provider value={{ color: "white", size: "24px"}}>
           <div>
-            <AiFillGithub onClick={openUrlGit}/>
+            <AiFillGithub onClick={openUrlGit} css={css`
+              cursor: pointer;
+              transition: transform 0.2s ease-in-out;
+              
+              &:hover {
+                  transform: scale(1.1);
+              }
+          
+              &:active {
+                  transform: scale(0.95);
+              }
+            `}/>
           </div>
         </IconContext.Provider>
     </div>

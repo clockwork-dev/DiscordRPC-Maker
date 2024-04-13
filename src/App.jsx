@@ -21,7 +21,7 @@ function App() {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  height: 450;
   `}>
     <Header />
     <MainBody />
