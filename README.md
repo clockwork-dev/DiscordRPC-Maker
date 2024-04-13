@@ -1,2 +1,2 @@
-# React + Vite
+# Tauri: React + Vite + Rust
 DiscordRPC Maker
